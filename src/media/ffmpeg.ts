@@ -330,6 +330,7 @@ export async function mergeWithDelayAndStretch(
   videoDuration?: number,
   audioDuration?: number,
   subtitle?: string,
+  audioDelayMs: number = 500,
 ): Promise<string> {
   // 下载视频和音频
   const [videoPath, audioPath] = await downloadFiles([
@@ -341,17 +342,25 @@ export async function mergeWithDelayAndStretch(
   audioDuration = audioDuration || await getDuration(audioPath.file);
 
   const rate = (0.5 + audioDuration) / videoDuration;
-  const delayMs = 500;
 
   const videoFilter = rate > 1
     ? `[0:v]setpts=${rate}*PTS[v]`
     : `[0:v]copy[v]`;
 
   // 检查是否需要补齐音频尾帧
-  const needPadding = videoDuration > (audioDuration + 0.5);
-  const audioFilter = needPadding 
-    ? `[1:a]adelay=${delayMs}|${delayMs},apad=whole_dur=${videoDuration}[aud]`
-    : `[1:a]adelay=${delayMs}|${delayMs}[aud]`;
+  const needPadding = videoDuration > (audioDuration + audioDelayMs / 1000);
+  
+  // 构建音频滤镜，如果 delayMs 为 0 则跳过延迟
+  let audioFilter: string;
+  if (audioDelayMs > 0) {
+    audioFilter = needPadding 
+      ? `[1:a]adelay=${audioDelayMs}|${audioDelayMs},apad=whole_dur=${videoDuration}[aud]`
+      : `[1:a]adelay=${audioDelayMs}|${audioDelayMs}[aud]`;
+  } else {
+    audioFilter = needPadding 
+      ? `[1:a]apad=whole_dur=${videoDuration}[aud]`
+      : `[1:a]copy[aud]`;
+  }
 
   let filterComplex = `${videoFilter};${audioFilter}`;
 
@@ -765,16 +774,6 @@ export function generateAssSubtitleForSong(
         const duration = Math.round((nextStartTime - word.start_time) / 10);
         karaokeText += `{\\k${duration}}${word.text}`;
       }
-      // part.words.forEach((word) => {
-      //   if (word.text.trim()) {
-      //     // 计算每个词的持续时间（以厘秒为单位）
-      //     const duration = Math.round((word.end_time - word.start_time) / 10);
-      //     karaokeText += `{\\k${duration}}${word.text}`;
-      //   } else {
-      //     // 对于空白字符，不添加时间标记
-      //     karaokeText += word.text;
-      //   }
-      // });
       
       // 添加卡拉OK效果行（显示在顶部）
       events.push(`Dialogue: 0,${startTimeFormatted},${endTimeFormatted},KaraokeHighlight,,0,0,0,,${karaokeText}`);
