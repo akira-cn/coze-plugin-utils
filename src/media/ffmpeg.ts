@@ -351,16 +351,9 @@ export async function mergeWithDelayAndStretch(
   const needPadding = videoDuration > (audioDuration + audioDelayMs / 1000);
   
   // 构建音频滤镜，如果 delayMs 为 0 则跳过延迟
-  let audioFilter: string;
-  if (audioDelayMs > 0) {
-    audioFilter = needPadding 
-      ? `[1:a]adelay=${audioDelayMs}|${audioDelayMs},apad=whole_dur=${videoDuration}[aud]`
-      : `[1:a]adelay=${audioDelayMs}|${audioDelayMs}[aud]`;
-  } else {
-    audioFilter = needPadding 
-      ? `[1:a]apad=whole_dur=${videoDuration}[aud]`
-      : '';
-  }
+  const audioFilter = needPadding 
+    ? `[1:a]adelay=${audioDelayMs}|${audioDelayMs},apad=whole_dur=${videoDuration}[aud]`
+    : `[1:a]adelay=${audioDelayMs}|${audioDelayMs}[aud]`;
 
   let filterComplex = `${videoFilter};${audioFilter}`;
 
