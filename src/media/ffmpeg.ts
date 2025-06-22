@@ -735,13 +735,10 @@ export function generateAssSubtitleForSong(
     // 处理整句歌词（显示在底部）
     if (part.text && part.words && part.words.length > 0) {
       const firstWord = part.words[0];
-      const lastWord = part.words[part.words.length - 1];
       
       // 计算开始和结束时间
-      const startTime = firstWord.start_time;
-      // 如果最后一个词是空白或标点，使用前一个词的结束时间
-      const endTime = lastWord.text.trim() ? lastWord.end_time : 
-        (part.words.length > 1 ? part.words[part.words.length - 2].end_time : firstWord.end_time);
+      const startTime = part.startTime;
+      const endTime = part.endTime;
       
       // 转换时间格式为 ASS 格式 (h:mm:ss.cc)
       const startTimeFormatted = formatAssTime(startTime);
@@ -753,16 +750,31 @@ export function generateAssSubtitleForSong(
       // 处理逐字卡拉OK效果
       // 为整句创建一个卡拉OK行，包含所有单词的时间信息
       let karaokeText = '{\\an8\\fnSource Han Sans CN}';
-      part.words.forEach((word) => {
-        if (word.text.trim()) {
-          // 计算每个词的持续时间（以厘秒为单位）
-          const duration = Math.round((word.end_time - word.start_time) / 10);
-          karaokeText += `{\\k${duration}}${word.text}`;
-        } else {
-          // 对于空白字符，不添加时间标记
-          karaokeText += word.text;
-        }
-      });
+
+      const delay = Math.round((firstWord.start_time - startTime) / 10);
+      if(delay > 0) karaokeText += `{\\k${delay}} `;
+
+      const words = part.words;
+      for(let i = 0; i < words.length; i++) {
+        const word = words[i];
+        const nextWord = words[i + 1];
+        let nextStartTime = word.end_time;
+        if(nextWord) nextStartTime = nextWord.start_time;
+
+        // 计算每个词的持续时间（以厘秒为单位）
+        const duration = Math.round((nextStartTime - word.start_time) / 10);
+        karaokeText += `{\\k${duration}}${word.text}`;
+      }
+      // part.words.forEach((word) => {
+      //   if (word.text.trim()) {
+      //     // 计算每个词的持续时间（以厘秒为单位）
+      //     const duration = Math.round((word.end_time - word.start_time) / 10);
+      //     karaokeText += `{\\k${duration}}${word.text}`;
+      //   } else {
+      //     // 对于空白字符，不添加时间标记
+      //     karaokeText += word.text;
+      //   }
+      // });
       
       // 添加卡拉OK效果行（显示在顶部）
       events.push(`Dialogue: 0,${startTimeFormatted},${endTimeFormatted},KaraokeHighlight,,0,0,0,,${karaokeText}`);

@@ -51,10 +51,10 @@ async function main(): Promise<void> {
   // }
 
   const config = {
-    "audio_duration": 98,
-    "audio_url": "https://lf-bot-studio-plugin-resource.coze.cn/obj/bot-studio-platform-plugin-tos/artist/image/aecc1790804f47c9be446a9bac0beb18.wav",
-    "video_duration": 97.99900000000002,
-    "video_url": "https://lf26-bot-platform-tos-sign.coze.cn/bot-studio-bot-platform/bot_files/578803847402115/video/mp4/7518603531780866060/output.mp4?lk3s=50ccb0c5&x-expires=1751166371&x-signature=n5buo4Ar1GDAGeXEJmsA%2BRCafcg%3D"
+    "audio_duration": 91,
+    "audio_url": "https://lf-bot-studio-plugin-resource.coze.cn/obj/bot-studio-platform-plugin-tos/artist/image/bdb2773226bb4fd3ad6ba596b858cdd6.wav",
+    "video_duration": 91,
+    "video_url": "https://lf9-bot-platform-tos-sign.coze.cn/bot-studio-bot-platform/bot_files/578803847402115/video/mp4/7518622478609350668/output.mp4?lk3s=50ccb0c5&x-expires=1751170806&x-signature=PNRCwSBJRWu6exZmwGkydjBeu74%3D"
   };
 
   const output1 = await mergeWithDelayAndStretch(config.video_url, config.audio_url, config.video_duration, config.audio_duration);
@@ -116,103 +116,99 @@ async function main(): Promise<void> {
   // const data = {
   //   "scenes": [
   //     {
-  //       "duration": 4.474,
-  //       "url": "https://s.coze.cn/t/L3k8YmordbY/"
+  //       "url": "https://s.coze.cn/t/WhONRP8Xxok/",
+  //       "duration": 4.674
   //     },
   //     {
-  //       "duration": 6.711,
-  //       "url": "https://s.coze.cn/t/c97nnlo6fWg/"
+  //       "url": "https://s.coze.cn/t/5AJQxJFZjK8/",
+  //       "duration": 7.011
   //     },
   //     {
-  //       "duration": 2.479,
-  //       "url": "https://s.coze.cn/t/ea967kTN1_I/"
+  //       "url": "https://s.coze.cn/t/vql72CotOWM/",
+  //       "duration": 3.879
   //     },
   //     {
-  //       "duration": 1.88,
-  //       "url": "https://s.coze.cn/t/rNGv8X76mlc/"
+  //       "url": "https://s.coze.cn/t/KzZHHMccQCE/",
+  //       "duration": 3.56
   //     },
   //     {
-  //       "duration": 3.12,
-  //       "url": "https://s.coze.cn/t/RbO-ER1Ud6I/"
+  //       "url": "https://s.coze.cn/t/2DBsPt7dyhA/",
+  //       "duration": 2.24
   //     },
   //     {
-  //       "duration": 4.36,
-  //       "url": "https://s.coze.cn/t/viebsPI4GlY/"
+  //       "url": "https://s.coze.cn/t/g0EUOJpDUpM/",
+  //       "duration": 4.52
   //     },
   //     {
-  //       "duration": 3.12,
-  //       "url": "https://s.coze.cn/t/HTP0R540TpA/"
+  //       "url": "https://s.coze.cn/t/GNE43fyTXIQ/",
+  //       "duration": 5.12
   //     },
   //     {
-  //       "duration": 3.52,
-  //       "url": "https://s.coze.cn/t/T-xnHtpA7qU/"
+  //       "url": "https://s.coze.cn/t/CrbGiVI11xc/",
+  //       "duration": 3.84
   //     },
   //     {
-  //       "duration": 3.96,
-  //       "url": "https://s.coze.cn/t/58R_Pxk_ds4/"
+  //       "url": "https://s.coze.cn/t/8tpp5Gd3PXk/",
+  //       "duration": 3.92
   //     },
   //     {
-  //       "duration": 2.52,
-  //       "url": "https://s.coze.cn/t/XpV1LDAK6FA/"
+  //       "url": "https://s.coze.cn/t/HNROpFj4toI/",
+  //       "duration": 2.72
   //     },
   //     {
-  //       "duration": 2.52,
-  //       "url": "https://s.coze.cn/t/eWo2N2CsWKA/"
+  //       "url": "https://s.coze.cn/t/J0JqV2lQAnU/",
+  //       "duration": 4.96
   //     },
   //     {
-  //       "duration": 2.52,
-  //       "url": "https://s.coze.cn/t/IqY2iJFLrOI/"
+  //       "url": "https://s.coze.cn/t/AFseQrVBum8/",
+  //       "duration": 3.96
   //     },
   //     {
-  //       "duration": 5,
-  //       "url": "https://s.coze.cn/t/U_OT_QlGzsQ/"
+  //       "url": "https://s.coze.cn/t/JbYq8mmsqGQ/",
+  //       "duration": 3.32
   //     },
   //     {
-  //       "duration": 3.84,
-  //       "url": "https://s.coze.cn/t/4HZjwp-lwDY/"
+  //       "url": "https://s.coze.cn/t/y4WccOOqccg/",
+  //       "duration": 3.56
   //     },
   //     {
-  //       "duration": 6.11,
-  //       "url": "https://s.coze.cn/t/AjZ_oHIfV5I/"
+  //       "url": "https://s.coze.cn/t/wEnozriO1uY/",
+  //       "duration": 4.16
   //     },
   //     {
-  //       "duration": 4.96,
-  //       "url": "https://s.coze.cn/t/uaoxbF_j2Qw/"
+  //       "url": "https://s.coze.cn/t/0IzqRORGPto/",
+  //       "duration": 4.4
   //     },
   //     {
-  //       "duration": 5.04,
-  //       "url": "https://s.coze.cn/t/RjEzuzISEvc/"
+  //       "url": "https://s.coze.cn/t/F9ybGPaYUqI/",
+  //       "duration": 2.6
   //     },
   //     {
-  //       "duration": 3.93,
-  //       "url": "https://s.coze.cn/t/b7fdjGPWP2Y/"
+  //       "url": "https://s.coze.cn/t/ZuAuGCGo4Lo/",
+  //       "duration": 3.84
   //     },
   //     {
-  //       "duration": 3.6,
-  //       "url": "https://s.coze.cn/t/9EgTXhvN1yQ/"
+  //       "url": "https://s.coze.cn/t/vwx2KU-FgRw/",
+  //       "duration": 4.64
   //     },
   //     {
-  //       "duration": 2.48,
-  //       "url": "https://s.coze.cn/t/aLIs8oi7CwA/"
+  //       "url": "https://s.coze.cn/t/FlFkHypsXFo/",
+  //       "duration": 4.36
   //     },
   //     {
-  //       "duration": 2.48,
-  //       "url": "https://s.coze.cn/t/htyMlATkH0M/"
+  //       "url": "https://s.coze.cn/t/JYEMFeCZvFk/",
+  //       "duration": 3.88
   //     },
   //     {
-  //       "duration": 4.95,
-  //       "url": "https://s.coze.cn/t/6VY7BfZB19Q/"
+  //       "url": "https://s.coze.cn/t/_pTB81r6cXE/",
+  //       "duration": 3.88
   //     },
   //     {
-  //       "duration": 5.77,
-  //       "url": "https://s.coze.cn/t/aU2AvpayXuc/"
-  //     },
-  //     {
-  //       "duration": 8.655,
-  //       "url": "https://s.coze.cn/t/-trDTq0xn2w/"
+  //       "url": "https://s.coze.cn/t/RfTaPLq7vhE/",
+  //       "duration": 1.955
   //     }
   //   ],
-  //   "subtitles": "{\"author\":\"白居易\",\"sentences\":[{\"text\":\"小娃撑小艇\",\"words\":[{\"attribute\":{},\"end_time\":11614,\"start_time\":11185,\"text\":\"小\"},{\"attribute\":{},\"end_time\":12214,\"start_time\":11785,\"text\":\"娃\"},{\"attribute\":{},\"end_time\":12760,\"start_time\":12385,\"text\":\"撑\"},{\"attribute\":{},\"end_time\":13100,\"start_time\":12760,\"text\":\"小\"},{\"attribute\":{},\"end_time\":13494,\"start_time\":13100,\"text\":\"艇\"},{\"attribute\":{},\"end_time\":13664,\"start_time\":13494,\"text\":\"\"}]},{\"text\":\"偷采白莲回\",\"words\":[{\"attribute\":{},\"end_time\":14020,\"start_time\":13665,\"text\":\"偷\"},{\"attribute\":{},\"end_time\":14320,\"start_time\":14020,\"text\":\"采\"},{\"attribute\":{},\"end_time\":14640,\"start_time\":14320,\"text\":\"白\"},{\"attribute\":{},\"end_time\":14960,\"start_time\":14640,\"text\":\"莲\"},{\"attribute\":{},\"end_time\":15334,\"start_time\":14960,\"text\":\"回\"},{\"attribute\":{},\"end_time\":15544,\"start_time\":15334,\"text\":\"\"}]},{\"text\":\"那可爱小娃\",\"words\":[{\"attribute\":{},\"end_time\":15974,\"start_time\":15545,\"text\":\"那\"},{\"attribute\":{},\"end_time\":16500,\"start_time\":16145,\"text\":\"可\"},{\"attribute\":{},\"end_time\":16820,\"start_time\":16500,\"text\":\"爱\"},{\"attribute\":{},\"end_time\":17214,\"start_time\":16820,\"text\":\"小\"},{\"attribute\":{},\"end_time\":17854,\"start_time\":17425,\"text\":\"娃\"},{\"attribute\":{},\"end_time\":18664,\"start_time\":17854,\"text\":\"\"}]},{\"text\":\"撑着小船儿出发\",\"words\":[{\"attribute\":{},\"end_time\":19040,\"start_time\":18665,\"text\":\"撑\"},{\"attribute\":{},\"end_time\":19340,\"start_time\":19040,\"text\":\"着\"},{\"attribute\":{},\"end_time\":19694,\"start_time\":19340,\"text\":\"小\"},{\"attribute\":{},\"end_time\":20334,\"start_time\":19905,\"text\":\"船\"},{\"attribute\":{},\"end_time\":22254,\"start_time\":21825,\"text\":\"儿\"},{\"attribute\":{},\"end_time\":22620,\"start_time\":22385,\"text\":\"出\"},{\"attribute\":{},\"end_time\":22854,\"start_time\":22620,\"text\":\"发\"},{\"attribute\":{},\"end_time\":23024,\"start_time\":22854,\"text\":\"\"}]},{\"text\":\"心中满是期待\",\"words\":[{\"attribute\":{},\"end_time\":23260,\"start_time\":23025,\"text\":\"心\"},{\"attribute\":{},\"end_time\":23494,\"start_time\":23260,\"text\":\"中\"},{\"attribute\":{},\"end_time\":24040,\"start_time\":23665,\"text\":\"满\"},{\"attribute\":{},\"end_time\":24340,\"start_time\":24040,\"text\":\"是\"},{\"attribute\":{},\"end_time\":24520,\"start_time\":24340,\"text\":\"期\"},{\"attribute\":{},\"end_time\":24774,\"start_time\":24520,\"text\":\"待\"},{\"attribute\":{},\"end_time\":26144,\"start_time\":24774,\"text\":\"\"}]},{\"text\":\"去把白莲采呀\",\"words\":[{\"attribute\":{},\"end_time\":26574,\"start_time\":26145,\"text\":\"去\"},{\"attribute\":{},\"end_time\":26880,\"start_time\":26585,\"text\":\"把\"},{\"attribute\":{},\"end_time\":27120,\"start_time\":26880,\"text\":\"白\"},{\"attribute\":{},\"end_time\":27440,\"start_time\":27120,\"text\":\"莲\"},{\"attribute\":{},\"end_time\":27814,\"start_time\":27440,\"text\":\"采\"},{\"attribute\":{},\"end_time\":29094,\"start_time\":28665,\"text\":\"呀\"},{\"attribute\":{},\"end_time\":29664,\"start_time\":29094,\"text\":\"\"}]},{\"text\":\"不解藏踪迹\",\"words\":[{\"attribute\":{},\"end_time\":31614,\"start_time\":31185,\"text\":\"不\"},{\"attribute\":{},\"end_time\":32254,\"start_time\":31825,\"text\":\"解\"},{\"attribute\":{},\"end_time\":32760,\"start_time\":32385,\"text\":\"藏\"},{\"attribute\":{},\"end_time\":32940,\"start_time\":32760,\"text\":\"踪\"},{\"attribute\":{},\"end_time\":33174,\"start_time\":32940,\"text\":\"迹\"},{\"attribute\":{},\"end_time\":33624,\"start_time\":33174,\"text\":\"\"}]},{\"text\":\"浮萍一道开\",\"words\":[{\"attribute\":{},\"end_time\":34020,\"start_time\":33625,\"text\":\"浮\"},{\"attribute\":{},\"end_time\":34360,\"start_time\":34020,\"text\":\"萍\"},{\"attribute\":{},\"end_time\":34660,\"start_time\":34360,\"text\":\"一\"},{\"attribute\":{},\"end_time\":34960,\"start_time\":34660,\"text\":\"道\"},{\"attribute\":{},\"end_time\":35334,\"start_time\":34960,\"text\":\"开\"},{\"attribute\":{},\"end_time\":36144,\"start_time\":35334,\"text\":\"\"}]},{\"text\":\"天真的他呀\",\"words\":[{\"attribute\":{},\"end_time\":36380,\"start_time\":36145,\"text\":\"天\"},{\"attribute\":{},\"end_time\":36614,\"start_time\":36380,\"text\":\"真\"},{\"attribute\":{},\"end_time\":37460,\"start_time\":37105,\"text\":\"的\"},{\"attribute\":{},\"end_time\":37760,\"start_time\":37460,\"text\":\"他\"},{\"attribute\":{},\"end_time\":38134,\"start_time\":37760,\"text\":\"呀\"},{\"attribute\":{},\"end_time\":38664,\"start_time\":38134,\"text\":\"\"}]},{\"text\":\"不知隐藏行踪啦\",\"words\":[{\"attribute\":{},\"end_time\":39040,\"start_time\":38665,\"text\":\"不\"},{\"attribute\":{},\"end_time\":39360,\"start_time\":39040,\"text\":\"知\"},{\"attribute\":{},\"end_time\":39660,\"start_time\":39360,\"text\":\"隐\"},{\"attribute\":{},\"end_time\":39960,\"start_time\":39660,\"text\":\"藏\"},{\"attribute\":{},\"end_time\":40240,\"start_time\":39960,\"text\":\"行\"},{\"attribute\":{},\"end_time\":40420,\"start_time\":40240,\"text\":\"踪\"},{\"attribute\":{},\"end_time\":40694,\"start_time\":40420,\"text\":\"啦\"},{\"attribute\":{},\"end_time\":41184,\"start_time\":40694,\"text\":\"\"}]},{\"text\":\"身后浮萍分开\",\"words\":[{\"attribute\":{},\"end_time\":41420,\"start_time\":41185,\"text\":\"身\"},{\"attribute\":{},\"end_time\":41654,\"start_time\":41420,\"text\":\"后\"},{\"attribute\":{},\"end_time\":44000,\"start_time\":43625,\"text\":\"浮\"},{\"attribute\":{},\"end_time\":44320,\"start_time\":44000,\"text\":\"萍\"},{\"attribute\":{},\"end_time\":44694,\"start_time\":44320,\"text\":\"分\"},{\"attribute\":{},\"end_time\":45334,\"start_time\":44905,\"text\":\"开\"},{\"attribute\":{},\"end_time\":46184,\"start_time\":45334,\"text\":\"\"}]},{\"text\":\"留下一道痕呀\",\"words\":[{\"attribute\":{},\"end_time\":46614,\"start_time\":46185,\"text\":\"留\"},{\"attribute\":{},\"end_time\":47480,\"start_time\":47105,\"text\":\"下\"},{\"attribute\":{},\"end_time\":47854,\"start_time\":47480,\"text\":\"一\"},{\"attribute\":{},\"end_time\":48494,\"start_time\":48065,\"text\":\"道\"},{\"attribute\":{},\"end_time\":49094,\"start_time\":48665,\"text\":\"痕\"},{\"attribute\":{},\"end_time\":49734,\"start_time\":49305,\"text\":\"呀\"},{\"attribute\":{},\"end_time\":50024,\"start_time\":49734,\"text\":\"\"}]},{\"text\":\"童梦轻舟游\",\"words\":[{\"attribute\":{},\"end_time\":51574,\"start_time\":51220,\"text\":\"童\"},{\"attribute\":{},\"end_time\":52254,\"start_time\":51825,\"text\":\"梦\"},{\"attribute\":{},\"end_time\":52854,\"start_time\":52425,\"text\":\"轻\"},{\"attribute\":{},\"end_time\":53494,\"start_time\":53065,\"text\":\"舟\"},{\"attribute\":{},\"end_time\":54134,\"start_time\":53705,\"text\":\"游\"},{\"attribute\":{},\"end_time\":56134,\"start_time\":54134,\"text\":\"\"}]},{\"text\":\"白莲香盈袖\",\"words\":[{\"attribute\":{},\"end_time\":56574,\"start_time\":56145,\"text\":\"白\"},{\"attribute\":{},\"end_time\":57214,\"start_time\":56785,\"text\":\"莲\"},{\"attribute\":{},\"end_time\":57854,\"start_time\":57425,\"text\":\"香\"},{\"attribute\":{},\"end_time\":58454,\"start_time\":58025,\"text\":\"盈\"},{\"attribute\":{},\"end_time\":59094,\"start_time\":58665,\"text\":\"袖\"},{\"attribute\":{},\"end_time\":61094,\"start_time\":59094,\"text\":\"\"}]},{\"text\":\"天真岁月悠\",\"words\":[{\"attribute\":{},\"end_time\":61420,\"start_time\":61185,\"text\":\"天\"},{\"attribute\":{},\"end_time\":61654,\"start_time\":61420,\"text\":\"真\"},{\"attribute\":{},\"end_time\":62640,\"start_time\":62385,\"text\":\"岁\"},{\"attribute\":{},\"end_time\":62894,\"start_time\":62640,\"text\":\"月\"},{\"attribute\":{},\"end_time\":64134,\"start_time\":63705,\"text\":\"悠\"},{\"attribute\":{},\"end_time\":66134,\"start_time\":64134,\"text\":\"\"}]},{\"text\":\"时光永不休\",\"words\":[{\"attribute\":{},\"end_time\":66400,\"start_time\":66145,\"text\":\"时\"},{\"attribute\":{},\"end_time\":66654,\"start_time\":66400,\"text\":\"光\"},{\"attribute\":{},\"end_time\":67854,\"start_time\":67425,\"text\":\"永\"},{\"attribute\":{},\"end_time\":68280,\"start_time\":68025,\"text\":\"不\"},{\"attribute\":{},\"end_time\":68534,\"start_time\":68280,\"text\":\"休\"},{\"attribute\":{},\"end_time\":70064,\"start_time\":68534,\"text\":\"\"}]},{\"text\":\"小娃撑小艇\",\"words\":[{\"attribute\":{},\"end_time\":71574,\"start_time\":71145,\"text\":\"小\"},{\"attribute\":{},\"end_time\":72214,\"start_time\":71785,\"text\":\"娃\"},{\"attribute\":{},\"end_time\":72760,\"start_time\":72385,\"text\":\"撑\"},{\"attribute\":{},\"end_time\":73100,\"start_time\":72760,\"text\":\"小\"},{\"attribute\":{},\"end_time\":73494,\"start_time\":73100,\"text\":\"艇\"},{\"attribute\":{},\"end_time\":73664,\"start_time\":73494,\"text\":\"\"}]},{\"text\":\"偷采白莲回\",\"words\":[{\"attribute\":{},\"end_time\":74040,\"start_time\":73665,\"text\":\"偷\"},{\"attribute\":{},\"end_time\":74360,\"start_time\":74040,\"text\":\"采\"},{\"attribute\":{},\"end_time\":74660,\"start_time\":74360,\"text\":\"白\"},{\"attribute\":{},\"end_time\":74980,\"start_time\":74660,\"text\":\"莲\"},{\"attribute\":{},\"end_time\":75374,\"start_time\":74980,\"text\":\"回\"},{\"attribute\":{},\"end_time\":76144,\"start_time\":75374,\"text\":\"\"}]},{\"text\":\"不解藏踪迹\",\"words\":[{\"attribute\":{},\"end_time\":76520,\"start_time\":76145,\"text\":\"不\"},{\"attribute\":{},\"end_time\":76840,\"start_time\":76520,\"text\":\"解\"},{\"attribute\":{},\"end_time\":77160,\"start_time\":76840,\"text\":\"藏\"},{\"attribute\":{},\"end_time\":77340,\"start_time\":77160,\"text\":\"踪\"},{\"attribute\":{},\"end_time\":77574,\"start_time\":77340,\"text\":\"迹\"},{\"attribute\":{},\"end_time\":78624,\"start_time\":77574,\"text\":\"\"}]},{\"text\":\"浮萍一道开\",\"words\":[{\"attribute\":{},\"end_time\":79054,\"start_time\":78625,\"text\":\"浮\"},{\"attribute\":{},\"end_time\":79494,\"start_time\":79065,\"text\":\"萍\"},{\"attribute\":{},\"end_time\":80600,\"start_time\":80225,\"text\":\"一\"},{\"attribute\":{},\"end_time\":80974,\"start_time\":80600,\"text\":\"道\"},{\"attribute\":{},\"end_time\":81574,\"start_time\":81145,\"text\":\"开\"},{\"attribute\":{},\"end_time\":83574,\"start_time\":81574,\"text\":\"\"}]}],\"title\":\"池上\"}"
+  //   "subtitles": "{\"author\":\"白居易\",\"title\":\"池上\",\"sentences\":[{\"words\":[{\"attribute\":{},\"end_time\":12153,\"start_time\":11686,\"text\":\"小\"},{\"attribute\":{},\"end_time\":13113,\"start_time\":12646,\"text\":\"娃\"},{\"attribute\":{},\"end_time\":14000,\"start_time\":13606,\"text\":\"撑\"},{\"attribute\":{},\"end_time\":14393,\"start_time\":14000,\"text\":\"小\"},{\"attribute\":{},\"end_time\":15033,\"start_time\":14566,\"text\":\"艇\"},{\"attribute\":{},\"end_time\":15565,\"start_time\":15033,\"text\":\"\"}],\"text\":\"小娃撑小艇\",\"startTime\":11686,\"endTime\":15565},{\"words\":[{\"attribute\":{},\"end_time\":16033,\"start_time\":15566,\"text\":\"偷\"},{\"attribute\":{},\"end_time\":16600,\"start_time\":16246,\"text\":\"采\"},{\"attribute\":{},\"end_time\":16953,\"start_time\":16600,\"text\":\"白\"},{\"attribute\":{},\"end_time\":17433,\"start_time\":16966,\"text\":\"莲\"},{\"attribute\":{},\"end_time\":17913,\"start_time\":17446,\"text\":\"回\"},{\"attribute\":{},\"end_time\":19125,\"start_time\":17913,\"text\":\"\"}],\"text\":\"偷采白莲回\",\"startTime\":15566,\"endTime\":19125},{\"words\":[{\"attribute\":{},\"end_time\":19500,\"start_time\":19126,\"text\":\"那\"},{\"attribute\":{},\"end_time\":19800,\"start_time\":19500,\"text\":\"可\"},{\"attribute\":{},\"end_time\":20193,\"start_time\":19800,\"text\":\"爱\"},{\"attribute\":{},\"end_time\":20740,\"start_time\":20366,\"text\":\"孩\"},{\"attribute\":{},\"end_time\":21113,\"start_time\":20740,\"text\":\"童\"},{\"attribute\":{},\"end_time\":21365,\"start_time\":21113,\"text\":\"\"}],\"text\":\"那可爱孩童\",\"startTime\":19126,\"endTime\":21365},{\"words\":[{\"attribute\":{},\"end_time\":21833,\"start_time\":21366,\"text\":\"划\"},{\"attribute\":{},\"end_time\":22420,\"start_time\":22046,\"text\":\"着\"},{\"attribute\":{},\"end_time\":22793,\"start_time\":22420,\"text\":\"小\"},{\"attribute\":{},\"end_time\":23260,\"start_time\":22806,\"text\":\"船\"},{\"attribute\":{},\"end_time\":23713,\"start_time\":23260,\"text\":\"儿\"},{\"attribute\":{},\"end_time\":24673,\"start_time\":24206,\"text\":\"来\"},{\"attribute\":{},\"end_time\":25885,\"start_time\":24673,\"text\":\"\"}],\"text\":\"划着小船儿来\",\"startTime\":21366,\"endTime\":25885},{\"words\":[{\"attribute\":{},\"end_time\":27360,\"start_time\":27140,\"text\":\"天\"},{\"attribute\":{},\"end_time\":27633,\"start_time\":27360,\"text\":\"真\"},{\"attribute\":{},\"end_time\":29420,\"start_time\":29046,\"text\":\"的\"},{\"attribute\":{},\"end_time\":29580,\"start_time\":29420,\"text\":\"模\"},{\"attribute\":{},\"end_time\":29833,\"start_time\":29580,\"text\":\"样\"},{\"attribute\":{},\"end_time\":31005,\"start_time\":29833,\"text\":\"\"}],\"text\":\"天真的模样\",\"startTime\":27140,\"endTime\":31005},{\"words\":[{\"attribute\":{},\"end_time\":31473,\"start_time\":31006,\"text\":\"怀\"},{\"attribute\":{},\"end_time\":32080,\"start_time\":31726,\"text\":\"揣\"},{\"attribute\":{},\"end_time\":32433,\"start_time\":32080,\"text\":\"满\"},{\"attribute\":{},\"end_time\":32913,\"start_time\":32446,\"text\":\"心\"},{\"attribute\":{},\"end_time\":33180,\"start_time\":32926,\"text\":\"期\"},{\"attribute\":{},\"end_time\":33433,\"start_time\":33180,\"text\":\"待\"},{\"attribute\":{},\"end_time\":34845,\"start_time\":33433,\"text\":\"\"}],\"text\":\"怀揣满心期待\",\"startTime\":31006,\"endTime\":34845},{\"words\":[{\"attribute\":{},\"end_time\":35313,\"start_time\":34846,\"text\":\"白\"},{\"attribute\":{},\"end_time\":35900,\"start_time\":35526,\"text\":\"莲\"},{\"attribute\":{},\"end_time\":36273,\"start_time\":35900,\"text\":\"多\"},{\"attribute\":{},\"end_time\":36753,\"start_time\":36286,\"text\":\"娇\"},{\"attribute\":{},\"end_time\":37273,\"start_time\":36806,\"text\":\"美\"},{\"attribute\":{},\"end_time\":38765,\"start_time\":37273,\"text\":\"\"}],\"text\":\"白莲多娇美\",\"startTime\":34846,\"endTime\":38765},{\"words\":[{\"attribute\":{},\"end_time\":39233,\"start_time\":38766,\"text\":\"忍\"},{\"attribute\":{},\"end_time\":39500,\"start_time\":39246,\"text\":\"不\"},{\"attribute\":{},\"end_time\":39753,\"start_time\":39500,\"text\":\"住\"},{\"attribute\":{},\"end_time\":40633,\"start_time\":40166,\"text\":\"采\"},{\"attribute\":{},\"end_time\":41153,\"start_time\":40686,\"text\":\"摘\"},{\"attribute\":{},\"end_time\":41485,\"start_time\":41153,\"text\":\"\"}],\"text\":\"忍不住采摘\",\"startTime\":38766,\"endTime\":41485},{\"words\":[{\"attribute\":{},\"end_time\":43073,\"start_time\":42620,\"text\":\"童\"},{\"attribute\":{},\"end_time\":43660,\"start_time\":43286,\"text\":\"梦\"},{\"attribute\":{},\"end_time\":44033,\"start_time\":43660,\"text\":\"悠\"},{\"attribute\":{},\"end_time\":44540,\"start_time\":44086,\"text\":\"哉\"},{\"attribute\":{},\"end_time\":44540,\"start_time\":44540,\"text\":\" \"},{\"attribute\":{},\"end_time\":44800,\"start_time\":44540,\"text\":\"岁\"},{\"attribute\":{},\"end_time\":45073,\"start_time\":44800,\"text\":\"月\"},{\"attribute\":{},\"end_time\":45780,\"start_time\":45526,\"text\":\"轻\"},{\"attribute\":{},\"end_time\":46033,\"start_time\":45780,\"text\":\"摆\"},{\"attribute\":{},\"end_time\":46445,\"start_time\":46033,\"text\":\"\"}],\"text\":\"童梦悠哉 岁月轻摆\",\"startTime\":42620,\"endTime\":46445},{\"words\":[{\"attribute\":{},\"end_time\":46720,\"start_time\":46446,\"text\":\"天\"},{\"attribute\":{},\"end_time\":46993,\"start_time\":46720,\"text\":\"真\"},{\"attribute\":{},\"end_time\":47680,\"start_time\":47406,\"text\":\"无\"},{\"attribute\":{},\"end_time\":47953,\"start_time\":47680,\"text\":\"邪\"},{\"attribute\":{},\"end_time\":47953,\"start_time\":47953,\"text\":\" \"},{\"attribute\":{},\"end_time\":48873,\"start_time\":48406,\"text\":\"乐\"},{\"attribute\":{},\"end_time\":49460,\"start_time\":49086,\"text\":\"在\"},{\"attribute\":{},\"end_time\":49820,\"start_time\":49460,\"text\":\"心\"},{\"attribute\":{},\"end_time\":50273,\"start_time\":49820,\"text\":\"怀\"},{\"attribute\":{},\"end_time\":50405,\"start_time\":50273,\"text\":\"\"}],\"text\":\"天真无邪 乐在心怀\",\"startTime\":46446,\"endTime\":50405},{\"words\":[{\"attribute\":{},\"end_time\":50873,\"start_time\":50406,\"text\":\"莲\"},{\"attribute\":{},\"end_time\":51420,\"start_time\":51046,\"text\":\"香\"},{\"attribute\":{},\"end_time\":51760,\"start_time\":51420,\"text\":\"漫\"},{\"attribute\":{},\"end_time\":52100,\"start_time\":51760,\"text\":\"开\"},{\"attribute\":{},\"end_time\":52100,\"start_time\":52100,\"text\":\" \"},{\"attribute\":{},\"end_time\":52260,\"start_time\":52100,\"text\":\"时\"},{\"attribute\":{},\"end_time\":52513,\"start_time\":52260,\"text\":\"光\"},{\"attribute\":{},\"end_time\":53340,\"start_time\":52966,\"text\":\"难\"},{\"attribute\":{},\"end_time\":53713,\"start_time\":53340,\"text\":\"再\"},{\"attribute\":{},\"end_time\":53725,\"start_time\":53713,\"text\":\"\"}],\"text\":\"莲香漫开 时光难再\",\"startTime\":50406,\"endTime\":53725},{\"words\":[{\"attribute\":{},\"end_time\":54080,\"start_time\":53726,\"text\":\"这\"},{\"attribute\":{},\"end_time\":54340,\"start_time\":54080,\"text\":\"般\"},{\"attribute\":{},\"end_time\":54713,\"start_time\":54340,\"text\":\"童\"},{\"attribute\":{},\"end_time\":55300,\"start_time\":54926,\"text\":\"趣\"},{\"attribute\":{},\"end_time\":55300,\"start_time\":55300,\"text\":\" \"},{\"attribute\":{},\"end_time\":55640,\"start_time\":55300,\"text\":\"永\"},{\"attribute\":{},\"end_time\":56000,\"start_time\":55640,\"text\":\"不\"},{\"attribute\":{},\"end_time\":56393,\"start_time\":56000,\"text\":\"更\"},{\"attribute\":{},\"end_time\":56873,\"start_time\":56406,\"text\":\"改\"},{\"attribute\":{},\"end_time\":57285,\"start_time\":56873,\"text\":\"\"}],\"text\":\"这般童趣 永不更改\",\"startTime\":53726,\"endTime\":57285},{\"words\":[{\"attribute\":{},\"end_time\":58553,\"start_time\":58086,\"text\":\"不\"},{\"attribute\":{},\"end_time\":59160,\"start_time\":58806,\"text\":\"解\"},{\"attribute\":{},\"end_time\":59500,\"start_time\":59160,\"text\":\"藏\"},{\"attribute\":{},\"end_time\":59740,\"start_time\":59500,\"text\":\"踪\"},{\"attribute\":{},\"end_time\":59993,\"start_time\":59740,\"text\":\"迹\"},{\"attribute\":{},\"end_time\":61445,\"start_time\":59993,\"text\":\"\"}],\"text\":\"不解藏踪迹\",\"startTime\":58086,\"endTime\":61445},{\"words\":[{\"attribute\":{},\"end_time\":61913,\"start_time\":61446,\"text\":\"浮\"},{\"attribute\":{},\"end_time\":62473,\"start_time\":62006,\"text\":\"萍\"},{\"attribute\":{},\"end_time\":63393,\"start_time\":62926,\"text\":\"一\"},{\"attribute\":{},\"end_time\":63860,\"start_time\":63406,\"text\":\"道\"},{\"attribute\":{},\"end_time\":64313,\"start_time\":63860,\"text\":\"开\"},{\"attribute\":{},\"end_time\":65845,\"start_time\":64313,\"text\":\"\"}],\"text\":\"浮萍一道开\",\"startTime\":61446,\"endTime\":65845},{\"words\":[{\"attribute\":{},\"end_time\":66313,\"start_time\":65846,\"text\":\"留\"},{\"attribute\":{},\"end_time\":66900,\"start_time\":66526,\"text\":\"下\"},{\"attribute\":{},\"end_time\":67273,\"start_time\":66900,\"text\":\"的\"},{\"attribute\":{},\"end_time\":67540,\"start_time\":67286,\"text\":\"痕\"},{\"attribute\":{},\"end_time\":67793,\"start_time\":67540,\"text\":\"迹\"},{\"attribute\":{},\"end_time\":68445,\"start_time\":67793,\"text\":\"\"}],\"text\":\"留下的痕迹\",\"startTime\":65846,\"endTime\":68445},{\"words\":[{\"attribute\":{},\"end_time\":68820,\"start_time\":68446,\"text\":\"是\"},{\"attribute\":{},\"end_time\":69000,\"start_time\":68820,\"text\":\"欢\"},{\"attribute\":{},\"end_time\":69273,\"start_time\":69000,\"text\":\"乐\"},{\"attribute\":{},\"end_time\":70120,\"start_time\":69766,\"text\":\"节\"},{\"attribute\":{},\"end_time\":70473,\"start_time\":70120,\"text\":\"拍\"},{\"attribute\":{},\"end_time\":72285,\"start_time\":70473,\"text\":\"\"}],\"text\":\"是欢乐节拍\",\"startTime\":68446,\"endTime\":72285},{\"words\":[{\"attribute\":{},\"end_time\":74033,\"start_time\":73566,\"text\":\"无\"},{\"attribute\":{},\"end_time\":74660,\"start_time\":74286,\"text\":\"忧\"},{\"attribute\":{},\"end_time\":75020,\"start_time\":74660,\"text\":\"的\"},{\"attribute\":{},\"end_time\":75260,\"start_time\":75020,\"text\":\"时\"},{\"attribute\":{},\"end_time\":75513,\"start_time\":75260,\"text\":\"光\"},{\"attribute\":{},\"end_time\":76925,\"start_time\":75513,\"text\":\"\"}],\"text\":\"无忧的时光\",\"startTime\":73566,\"endTime\":76925},{\"words\":[{\"attribute\":{},\"end_time\":77180,\"start_time\":76926,\"text\":\"纯\"},{\"attribute\":{},\"end_time\":77433,\"start_time\":77180,\"text\":\"真\"},{\"attribute\":{},\"end_time\":77913,\"start_time\":77446,\"text\":\"永\"},{\"attribute\":{},\"end_time\":78873,\"start_time\":78406,\"text\":\"不\"},{\"attribute\":{},\"end_time\":79180,\"start_time\":78926,\"text\":\"衰\"},{\"attribute\":{},\"end_time\":79433,\"start_time\":79180,\"text\":\"败\"},{\"attribute\":{},\"end_time\":81285,\"start_time\":79433,\"text\":\"\"}],\"text\":\"纯真永不衰败\",\"startTime\":76926,\"endTime\":81285},{\"words\":[{\"attribute\":{},\"end_time\":81560,\"start_time\":81286,\"text\":\"回\"},{\"attribute\":{},\"end_time\":81833,\"start_time\":81560,\"text\":\"忆\"},{\"attribute\":{},\"end_time\":82740,\"start_time\":82286,\"text\":\"那\"},{\"attribute\":{},\"end_time\":83000,\"start_time\":82740,\"text\":\"画\"},{\"attribute\":{},\"end_time\":83273,\"start_time\":83000,\"text\":\"面\"},{\"attribute\":{},\"end_time\":85165,\"start_time\":83273,\"text\":\"\"}],\"text\":\"回忆那画面\",\"startTime\":81286,\"endTime\":85165},{\"words\":[{\"attribute\":{},\"end_time\":85420,\"start_time\":85166,\"text\":\"温\"},{\"attribute\":{},\"end_time\":85673,\"start_time\":85420,\"text\":\"暖\"},{\"attribute\":{},\"end_time\":86633,\"start_time\":86166,\"text\":\"满\"},{\"attribute\":{},\"end_time\":87113,\"start_time\":86646,\"text\":\"胸\"},{\"attribute\":{},\"end_time\":87593,\"start_time\":87126,\"text\":\"怀\"},{\"attribute\":{},\"end_time\":89045,\"start_time\":87593,\"text\":\"\"}],\"text\":\"温暖满胸怀\",\"startTime\":85166,\"endTime\":89045}]}"
   // }
 
   // const output = await createKenBurnsVideoFromImages({

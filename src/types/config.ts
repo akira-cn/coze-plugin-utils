@@ -89,7 +89,9 @@ export interface IAssSongPart {
     start_time: number;
     text: string;
   }[];
-  text: string
+  text: string;
+  startTime: number;
+  endTime: number;
 }
 
 export interface KenBurnsOptions {
