@@ -359,7 +359,7 @@ export async function mergeWithDelayAndStretch(
   } else {
     audioFilter = needPadding 
       ? `[1:a]apad=whole_dur=${videoDuration}[aud]`
-      : `[1:a]copy[aud]`;
+      : '';
   }
 
   let filterComplex = `${videoFilter};${audioFilter}`;

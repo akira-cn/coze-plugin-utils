@@ -51,10 +51,11 @@ async function main(): Promise<void> {
   // }
 
   const config = {
-    "audio_duration": 91,
-    "audio_url": "https://lf-bot-studio-plugin-resource.coze.cn/obj/bot-studio-platform-plugin-tos/artist/image/bdb2773226bb4fd3ad6ba596b858cdd6.wav",
-    "video_duration": 91,
-    "video_url": "https://lf9-bot-platform-tos-sign.coze.cn/bot-studio-bot-platform/bot_files/578803847402115/video/mp4/7518622478609350668/output.mp4?lk3s=50ccb0c5&x-expires=1751170806&x-signature=PNRCwSBJRWu6exZmwGkydjBeu74%3D"
+    "audioDelayMs": 0,
+    "audio_duration": 70,
+    "audio_url": "https://lf-bot-studio-plugin-resource.coze.cn/obj/bot-studio-platform-plugin-tos/artist/image/b51947011b4a491bbe909661829bc38f.wav",
+    "video_duration": 70,
+    "video_url": "https://lf9-bot-platform-tos-sign.coze.cn/bot-studio-bot-platform/bot_files/578803847402115/video/mp4/7518697999741501449/output.mp4?lk3s=50ccb0c5&x-expires=1751188282&x-signature=g1PEQ2Hu2whxdqeLV7sgMbksCts%3D"
   };
 
   const output1 = await mergeWithDelayAndStretch(config.video_url, config.audio_url, config.video_duration, config.audio_duration);
