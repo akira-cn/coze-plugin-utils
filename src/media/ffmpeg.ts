@@ -550,12 +550,16 @@ export async function createKenBurnsVideoFromImages({
         `fps=${fps}`,
       ].join(':');
 
-      const filterChain = `[${index}:v]${zoomPanFilter},fade=t=in:st=0:d=${fadeDuration},fade=t=out:st=${fadeOutStartTime}:d=${fadeDuration}`;
+      // 构建滤镜链，如果 fadeDuration 为 0 则跳过淡出效果
+      let filterChain = `[${index}:v]${zoomPanFilter}`;
+      if (fadeDuration > 0) {
+        filterChain += `,fade=t=in:st=0:d=${fadeDuration},fade=t=out:st=${fadeOutStartTime}:d=${fadeDuration}`;
+      }
       
       // 收集字幕信息
       if (subtitle) {
         const subtitleStart = currentTime + subtitleDelay;
-        const subtitleEnd = currentTime + duration - fadeDuration;
+        const subtitleEnd = currentTime + duration - (fadeDuration > 0 ? fadeDuration : 0);
         
         // 根据位置设置对齐方式和边距
         let alignment = 2; // 底部居中
