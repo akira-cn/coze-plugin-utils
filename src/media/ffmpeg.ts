@@ -719,8 +719,8 @@ export function generateAssSubtitleForSong(
     '[V4+ Styles]',
     'Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding',
     'Style: Default,Arial,54,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1',
-    'Style: Karaoke,Arial,54,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,8,10,10,10,1',
-    'Style: KaraokeHighlight,Arial,54,&H0000FFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,8,10,10,10,1',
+    'Style: Karaoke,Arial,54,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,8,10,10,150,1',
+    'Style: KaraokeHighlight,Arial,54,&H0000FFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,8,10,10,150,1',
     '',
     '[Events]',
     'Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text',
@@ -746,12 +746,9 @@ export function generateAssSubtitleForSong(
       const startTimeFormatted = formatAssTime(startTime);
       const endTimeFormatted = formatAssTime(endTime);
       
-      // 添加整句歌词对话行
-      events.push(`Dialogue: 0,${startTimeFormatted},${endTimeFormatted},Default,,0,0,0,,{\\an2\\fnSource Han Sans CN}${part.text}`);
-      
       // 处理逐字卡拉OK效果
       // 为整句创建一个卡拉OK行，包含所有单词的时间信息
-      let karaokeText = '{\\an8\\fnSource Han Sans CN}';
+      let karaokeText = '{\\an2\\fnSource Han Sans CN}';
 
       const delay = Math.round((firstWord.start_time - startTime) / 10);
       if(delay > 0) karaokeText += `{\\k${delay}} `;
