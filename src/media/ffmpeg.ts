@@ -724,7 +724,7 @@ export function generateAssSubtitleForSong(
   const events: string[] = [];
   
   // 添加标题和作者信息
-  events.push(`Dialogue: 0,0:00:00.00,0:00:03.00,Default,,0,0,0,,{\\an5\\fs80}${title} - ${author}`);
+  events.push(`Dialogue: 0,0:00:00.00,0:00:03.00,Default,,0,0,0,,{\\an5\\fnSource Han Sans CN\\fs80}${title} - ${author}`);
   
   // 处理每个部分的歌词
   sentences.forEach((part, partIndex) => {
