@@ -719,7 +719,7 @@ export function generateAssSubtitleForSong(
     '[V4+ Styles]',
     'Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding',
     'Style: Default,Arial,54,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,2,10,10,10,1',
-    'Style: Karaoke,Arial,54,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,8,10,10,150,1',
+    'Style: Translation,Arial,54,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,8,10,10,100,1',
     'Style: KaraokeHighlight,Arial,54,&H0000FFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,2,8,10,10,150,1',
     '',
     '[Events]',
@@ -765,8 +765,13 @@ export function generateAssSubtitleForSong(
         karaokeText += `{\\k${duration}}${word.text}`;
       }
       
-      // 添加卡拉OK效果行（显示在顶部）
+      // 添加卡拉OK效果行（显示在底部）
       events.push(`Dialogue: 0,${startTimeFormatted},${endTimeFormatted},KaraokeHighlight,,0,0,0,,${karaokeText}`);
+      if(part.translation) {
+        // 添加翻译行（显示在顶部）
+        const translationText = `{\\an2\\fnOpen Sans}${part.translation}`;
+        events.push(`Dialogue: 0,${startTimeFormatted},${endTimeFormatted},Translation,,0,0,0,,${translationText}`);
+      }
     }
   });
   

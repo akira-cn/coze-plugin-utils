@@ -90,6 +90,7 @@ export interface IAssSongPart {
     text: string;
   }[];
   text: string;
+  translation?: string;
   startTime: number;
   endTime: number;
 }
