@@ -375,8 +375,12 @@ export async function mergeWithNarrationAudios(
     return ret;
   });
   const audioMixInputs = narrationFiles.map((_, i) => `[a${i}]`).join('');
-  const audioFilter = `${audioFilters.join(';')};${audioMixInputs}amix=inputs=${narrationFiles.length}[aud]`;
-  // console.log(audioFilter);
+  let audioFilter = `${audioFilters.join(';')};${audioMixInputs}amix=inputs=${narrationFiles.length}[aud]`;
+  // console.log(assText, audioFilter);
+  const needPadding = rate > 1;
+  if(needPadding) {
+    audioFilter += `;[aud]apad=whole_dur=${videoDuration}[aud]`;
+  }
 
   // 添加字幕
   const fontsdir = path.resolve(__dirname, '..', '..', 'fonts');

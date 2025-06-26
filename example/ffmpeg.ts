@@ -297,33 +297,19 @@ async function main(): Promise<void> {
   // const res1 = await uploadFile(output);
   // console.log(res1);
 
-  const input = {
-    "audio_duration": 8.388,
-    "narrations": [
-      {
-        "duration": 1.476,
-        "text": "Picture this.",
-        "url": ""
-      },
-      {
-        "duration": 6.912,
-        "text": "You're lying on your back in the grass on a perfect summer day, watching the clouds drift by.",
-        "url": ""
-      }
-    ],
-    "video_duration": 10,
-    "video_url": ""
-  };
-  
-  const output = await mergeWithNarrationAudios(
-    input.video_duration,
-    input.audio_duration,
-    input.video_url,
-    input.narrations
-  );
+  // const input = {
 
-  const res1 = await uploadFile(output);
-  console.log(res1);
+  //   };
+  
+  // const output = await mergeWithNarrationAudios(
+  //   input.video_duration,
+  //   input.audio_duration,
+  //   input.video_url,
+  //   input.narrations
+  // );
+
+  // const res1 = await uploadFile(output);
+  // console.log(res1);
 }
  
 main();
