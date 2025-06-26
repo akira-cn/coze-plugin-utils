@@ -324,6 +324,96 @@ function replaceChineseWithFontTag(text: string): string {
   });
 }
 
+export async function mergeWithNarrationAudios(
+  videoDuration: number,
+  audioDuration: number,
+  videoUrl: string,
+  narrations: { duration: number, text: string, url: string }[],
+  audioDelayMs: number = 500,
+): Promise<string> {
+  // 下载视频和所有音频文件
+  const downloadTasks = [
+    { url: videoUrl, filename: 'video.mp4' },
+    ...narrations.map((n, i) => ({ url: n.url, filename: `narration_${i}.mp3` })),
+  ];
+
+  const files = await downloadFiles(downloadTasks);
+  const [videoFile, ...narrationFiles] = files;
+
+  // 计算视频速率
+  const rate = (audioDuration + audioDelayMs / 1000) / videoDuration;
+  const videoFilter = rate > 1
+    ? `[0:v]setpts=${rate}*PTS[v]`
+    : `[0:v]copy[v]`;
+
+  // 生成字幕文件
+  const assFile = videoFile.createOutput('temp_subtitle.ass');
+  const assEvents = narrations.map((narration, index) => {
+    const startTime = index === 0 ? audioDelayMs / 1000 : narrations
+      .slice(0, index)
+      .reduce((acc, curr) => acc + curr.duration, audioDelayMs / 1000);
+
+    return {
+      text: replaceChineseWithFontTag(narration.text),
+      effect: '{\\an2\\fnOpen Sans}',
+      start: formatTime(startTime),
+      end: formatTime(startTime + narration.duration),
+      marginV: 100,
+      marginL: 60,
+      marginR: 60,
+    };
+  });
+
+  const assText = generateASS(assEvents);
+  await fsPromises.writeFile(assFile, assText, 'utf-8');
+
+  // 构建音频混合滤镜
+  const audioFilters = narrationFiles.map((_: any, i: number) => (`[${i + 1}:a]adelay=${audioDelayMs}|${audioDelayMs}[a${i}]`));
+  const audioMixInputs = narrationFiles.map((_, i) => `[a${i}]`).join('');
+  const audioFilter = `${audioFilters.join(';')};${audioMixInputs}amix=inputs=${narrationFiles.length}[aud]`;
+
+  // 添加字幕
+  const fontsdir = path.resolve(__dirname, '..', '..', 'fonts');
+  const filterComplex = `${videoFilter};${audioFilter};[v]ass=${assFile}:fontsdir=${fontsdir}[vout]`;
+
+  const outputPath = videoFile.createOutput('output.mp4');
+
+  await new Promise<void>((resolve, reject) => {
+    const command = ffmpeg();
+    
+    // 添加视频输入
+    command.input(videoFile.file);
+    
+    // 添加所有旁白音频输入
+    narrationFiles.forEach((file) => {
+      command.input(file.file);
+    });
+
+    command
+      .complexFilter(filterComplex)
+      .outputOptions([
+        '-map [vout]',
+        '-map [aud]',
+        '-c:v libx264',
+        '-c:a aac',
+      ])
+      .on('start', (commandLine) => {
+        console.log('[FFmpeg] 开始执行命令:', commandLine);
+      })
+      .on('end', () => {
+        console.log('✅ 合成完成');
+        resolve();
+      })
+      .on('error', (err) => {
+        console.error('❌ 出错了:', err.message);
+        reject(new Error(`视频合成失败: ${err.message}`));
+      })
+      .save(outputPath);
+  });
+
+  return outputPath;
+}
+
 export async function mergeWithDelayAndStretch(
   videoUrl: string,
   audioUrl: string,
