@@ -368,9 +368,15 @@ export async function mergeWithNarrationAudios(
   await fsPromises.writeFile(assFile, assText, 'utf-8');
 
   // 构建音频混合滤镜
-  const audioFilters = narrationFiles.map((_: any, i: number) => (`[${i + 1}:a]adelay=${audioDelayMs}|${audioDelayMs}[a${i}]`));
+  let delayMs = audioDelayMs;
+  const audioFilters = narrationFiles.map((_: any, i: number) => {
+    const ret = `[${i + 1}:a]adelay=${Math.round(delayMs)}|${Math.round(delayMs)}[a${i}]`;
+    delayMs += narrations[i].duration * 1000;
+    return ret;
+  });
   const audioMixInputs = narrationFiles.map((_, i) => `[a${i}]`).join('');
   const audioFilter = `${audioFilters.join(';')};${audioMixInputs}amix=inputs=${narrationFiles.length}[aud]`;
+  // console.log(audioFilter);
 
   // 添加字幕
   const fontsdir = path.resolve(__dirname, '..', '..', 'fonts');

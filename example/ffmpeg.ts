@@ -1,6 +1,6 @@
 import * as dotenv from 'dotenv';
 import path from 'path';
-import { convertAudio, mergeVideoAndAudio, burnASSSubtitleToVideo, joinVideos, setGlobalConfig, uploadFile, mergeWithDelayAndStretch, createKenBurnsVideoFromImages, generateAssSubtitleForSong } from '../src';
+import { convertAudio, mergeVideoAndAudio, burnASSSubtitleToVideo, joinVideos, setGlobalConfig, uploadFile, mergeWithDelayAndStretch, createKenBurnsVideoFromImages, generateAssSubtitleForSong, mergeWithNarrationAudios } from '../src';
 
 dotenv.config({
   path: ['.env.local', '.env'],
@@ -50,18 +50,18 @@ async function main(): Promise<void> {
   //   console.error('视频合并失败:', error);
   // }
 
-  const config = {
-    "audioDelayMs": 0,
-    "audio_duration": 139,
-    "audio_url": "https://lf-bot-studio-plugin-resource.coze.cn/obj/bot-studio-platform-plugin-tos/artist/image/553a236e5d634947a591eb842fc63d71.wav",
-    "video_duration": 139,
-    "video_url": "https://lf3-bot-platform-tos-sign.coze.cn/bot-studio-bot-platform/bot_files/578803847402115/video/mp4/7520037956917477415/output.mp4?lk3s=50ccb0c5&x-expires=1751500870&x-signature=bfNXBbuhqzRTh%2FvPyswPZ2bmHmY%3D"
-  };
+  // const config = {
+  //   "audioDelayMs": 0,
+  //   "audio_duration": 139,
+  //   "audio_url": "https://lf-bot-studio-plugin-resource.coze.cn/obj/bot-studio-platform-plugin-tos/artist/image/553a236e5d634947a591eb842fc63d71.wav",
+  //   "video_duration": 139,
+  //   "video_url": "https://lf3-bot-platform-tos-sign.coze.cn/bot-studio-bot-platform/bot_files/578803847402115/video/mp4/7520037956917477415/output.mp4?lk3s=50ccb0c5&x-expires=1751500870&x-signature=bfNXBbuhqzRTh%2FvPyswPZ2bmHmY%3D"
+  // };
 
-  const output1 = await mergeWithDelayAndStretch(config.video_url, config.audio_url, config.video_duration, config.audio_duration);
+  // const output1 = await mergeWithDelayAndStretch(config.video_url, config.audio_url, config.video_duration, config.audio_duration);
 
-  const res1 = await uploadFile(output1);
-  console.log(res1);
+  // const res1 = await uploadFile(output1);
+  // console.log(res1);
 
   // 示例5: Ken Burns 效果视频生成（带字幕）
   // 使用本地测试图片生成带有 Ken Burns 效果和字幕的视频
@@ -296,6 +296,34 @@ async function main(): Promise<void> {
 
   // const res1 = await uploadFile(output);
   // console.log(res1);
+
+  const input = {
+    "audio_duration": 8.388,
+    "narrations": [
+      {
+        "duration": 1.476,
+        "text": "Picture this.",
+        "url": ""
+      },
+      {
+        "duration": 6.912,
+        "text": "You're lying on your back in the grass on a perfect summer day, watching the clouds drift by.",
+        "url": ""
+      }
+    ],
+    "video_duration": 10,
+    "video_url": ""
+  };
+  
+  const output = await mergeWithNarrationAudios(
+    input.video_duration,
+    input.audio_duration,
+    input.video_url,
+    input.narrations
+  );
+
+  const res1 = await uploadFile(output);
+  console.log(res1);
 }
  
 main();
