@@ -379,9 +379,9 @@ export async function mergeWithNarrationAudios(
 
   const needPadding = rate > 1;
   if(needPadding) {
-    audioFilter = audioFilter.replace(/\[aud\]$/, `,apad=whole_dur=${videoDuration}[aud]`);
+    audioFilter = audioFilter.replace(/\[aud\]$/, `:duration=longest,apad=whole_dur=${videoDuration}[aud]`);
   }
-  console.log(assText, audioFilter);
+  // console.log(assText, audioFilter);
 
   // 添加字幕
   const fontsdir = path.resolve(__dirname, '..', '..', 'fonts');

@@ -33,22 +33,22 @@ async function main(): Promise<void> {
   
   // 示例4: 合并多个视频
   // 使用本地资源文件进行测试
-  // const videoUrls = [
-  //     "https://lf6-bot-platform-tos-sign.coze.cn/bot-studio-bot-platform/bot_files/578803847402115/video/mp4/7517292809146073100/output.mp4?lk3s=50ccb0c5&x-expires=1750861073&x-signature=gXDnFCLhWmeQnt4bSEk6xyr2YMU%3D",
-  //     "https://lf6-bot-platform-tos-sign.coze.cn/bot-studio-bot-platform/bot_files/578803847402115/video/mp4/7517292809146073100/output.mp4?lk3s=50ccb0c5&x-expires=1750861073&x-signature=gXDnFCLhWmeQnt4bSEk6xyr2YMU%3D",
-  //   ];
+  const videoUrls = [
+      "https://lf9-bot-platform-tos-sign.coze.cn/bot-studio-bot-platform/bot_files/578803847402115/video/mp4/7520315148687392768/output.mp4?lk3s=50ccb0c5&x-expires=1751565008&x-signature=RMLkPy0YGWuIQsBwVEi7febXOiM%3D",
+      "https://lf9-bot-platform-tos-sign.coze.cn/bot-studio-bot-platform/bot_files/578803847402115/video/mp4/7520315148687392768/output.mp4?lk3s=50ccb0c5&x-expires=1751565008&x-signature=RMLkPy0YGWuIQsBwVEi7febXOiM%3D",
+    ];
   
-  // console.log('开始合并视频...');
-  // try {
-  //   const outputPath = await joinVideos(videoUrls);
-  //   console.log('视频合并完成，输出路径:', outputPath);
+  console.log('开始合并视频...');
+  try {
+    const outputPath = await joinVideos(videoUrls);
+    console.log('视频合并完成，输出路径:', outputPath);
     
-  //   // 上传合并后的视频
-  //   const uploadResult = await uploadFile(outputPath);
-  //   console.log('视频上传完成，URL:', uploadResult.url);
-  // } catch (error) {
-  //   console.error('视频合并失败:', error);
-  // }
+    // 上传合并后的视频
+    const uploadResult = await uploadFile(outputPath);
+    console.log('视频上传完成，URL:', uploadResult.url);
+  } catch (error) {
+    console.error('视频合并失败:', error);
+  }
 
   // const config = {
   //   "audioDelayMs": 0,
